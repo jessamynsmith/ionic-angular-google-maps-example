@@ -1,3 +1,8 @@
 .angular-google-map-container {
   height: 300px;
 }
+
+p {
+  padding: 10px;
+  text-align: center;
+}
