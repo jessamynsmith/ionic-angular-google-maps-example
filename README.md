@@ -13,6 +13,10 @@ Development
     ionic platform add android
 
     ionic plugin add https://github.com/apache/cordova-plugin-whitelist.git
+    ionic plugin add cordova-plugin-geolocation
+    
+    npm install
+    bower install
 
     ionic serve
     ionic run android
