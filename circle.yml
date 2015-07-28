@@ -1,0 +1,16 @@
+---
+machine:
+  node:
+    version: 0.10.22
+
+test:
+  override:
+    - node_modules/.bin/jshint --exclude=www/lib
+#    - node_modules/karma/bin/karma start --single-run
+#    - node_modules/coveralls/bin/coveralls.js < tests/coverage/PhantomJS*/lcov.info
+
+deployment:
+  production:
+    branch: master
+    heroku:
+      appname: ionic-angular-google-maps
