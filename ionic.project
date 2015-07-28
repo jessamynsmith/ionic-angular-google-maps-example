@@ -1,5 +1,5 @@
 {
-  "name": "ionic_google_maps_example",
+  "name": "ionic_angular_google_maps_example",
   "app_id": "",
   "gulpStartupTasks": [
     "sass",

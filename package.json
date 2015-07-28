@@ -1,7 +1,7 @@
 {
-  "name": "ionic_google_maps_example",
+  "name": "ionic_angular_google_maps_example",
   "version": "1.0.0",
-  "description": "ionic_google_maps_example: An Ionic project",
+  "description": "Example of using angular-google-maps in an Ionic app",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^1.3.3",
@@ -19,10 +19,21 @@
     "cordova-plugin-console",
     "cordova-plugin-whitelist",
     "cordova-plugin-splashscreen",
+    "cordova-plugin-geolocation",
     "com.ionic.keyboard"
   ],
   "cordovaPlatforms": [
     "ios",
     "android"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jessamynsmith/ionic-angular-google-maps-example"
+  },
+  "keywords": [
+    "google",
+    "maps",
+    "ionic",
+    "example"
   ]
 }

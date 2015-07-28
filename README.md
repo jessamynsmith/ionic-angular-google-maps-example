@@ -1,9 +1,9 @@
-ionic-google-maps-example
+ionic-angular-google-maps-example
 =========================
 
 Example of using angular-google-maps in an Ionic app
 
-See the running project on [GitHub pages](http://jessamynsmith.github.io/ionic-google-maps-example/www/index.html).
+See the running project on [GitHub pages](http://jessamynsmith.github.io/ionic-angular-google-maps-example/www/index.html).
 
 
 Development
