@@ -84,6 +84,6 @@ angular.module('angularGoogleMapsExample.controllers', ['angularGoogleMapsExampl
         console.log("No confirmation from user, using fallback");
         initializeMap();
       }
-    }, 3000);
+    }, 5000);
 
   });
