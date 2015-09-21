@@ -29,6 +29,7 @@ angular.module('angularGoogleMapsExample.controllers', ['angularGoogleMapsExampl
         };
       }
       console.log(position);
+      // TODO add marker on current location
 
       $scope.map = {
         center: {
