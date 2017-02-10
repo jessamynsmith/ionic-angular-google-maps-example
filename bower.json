@@ -1,12 +1,12 @@
 {
-  "name": "HelloIonic",
-  "private": "true",
-  "devDependencies": {
-  },
+  "name": "ionic_angular_google_maps_example",
+  "description": "Example of using angular-google-maps in an Ionic app",
+  "version": "0.0.0",
+  "private": true,
   "dependencies": {
-    "angular": "1.3.13",
-    "angular-google-maps": "~2.1.5",
-    "ionic": "v1.0.0",
-    "ngCordova": "~0.1.17-alpha"
+    "angular": "^1.6.2",
+    "angular-google-maps": "^2.4.1",
+    "ionic": "^1.3.2",
+    "ngCordova": "^0.1.27-alpha"
   }
 }
