@@ -49,7 +49,7 @@ angular.module('angularGoogleMapsExample.controllers', ['angularGoogleMapsExampl
 
       Yelp.search(position).then(function(data) {
         console.log(data);
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < data.data.businesses.length; i++) {
           var business = data.data.businesses[i];
           $scope.markers.push({
             id: i,

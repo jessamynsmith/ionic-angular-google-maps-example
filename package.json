@@ -34,8 +34,8 @@
     "com.ionic.keyboard"
   ],
   "cordovaPlatforms": [
-    "android",
-    "ios"
+    "ios",
+    "android"
   ],
   "repository": {
     "type": "git",
