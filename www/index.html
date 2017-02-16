@@ -11,14 +11,12 @@
         style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
         font-src 'self' https://fonts.gstatic.com 'unsafe-inline';
         img-src 'self' data: https://*.googleapis.com https://maps.gstatic.com https://csi.gstatic.com 'unsafe-inline';
-        script-src 'self' https://*.googleapis.com https://maps.gstatic.com http://localhost:* 'unsafe-inline' 'unsafe-eval';
+        script-src 'self' https://*.googleapis.com https://maps.gstatic.com http://*:8100 'unsafe-inline' 'unsafe-eval';
         frame-src 'self' gap://ready;
-        connect-src 'self' https://angular-google-maps-example.herokuapp.com ws://localhost:*">
+        connect-src 'self' https://angular-google-maps-example.herokuapp.com ws://*:35729">
 
   <!-- compiled css output -->
   <link href="css/ionic.app.css" rel="stylesheet">
-
-  <link href="css/style.css" rel="stylesheet">
 
   <!-- ionic/angularjs js -->
   <script src="lib/ionic/release/js/ionic.bundle.js"></script>
