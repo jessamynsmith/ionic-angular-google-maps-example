@@ -11,16 +11,32 @@ View the running app on [Heroku](https://ionic-angular-google-maps.herokuapp.com
 Development
 -----------
 
+Ensure you have executables on path:
+
+    npm install -g cordova ionic gulp bower
+
+Do once to initialize the app:
+
     ionic platform add ios
     ionic platform add android
 
     ionic plugin add https://github.com/apache/cordova-plugin-whitelist.git
     ionic plugin add cordova-plugin-geolocation
-    
+
+Do each time dependencies have changed:
+
     npm install
-    bower install
+
+Do each time anything in the scss directory changes:
+
+    gulp sass
+
+See the app in the browser:
 
     ionic serve
+
+To see the app on a device, connect a device with USB and run using one of the following commands:
+
     ionic run android
     ionic run ios
 
