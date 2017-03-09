@@ -1,0 +1,18 @@
+{
+  "devel": true,
+  "globalstrict": true,
+  "node": true,
+  "globals": {
+    "angular": false,
+    "describe": false,
+    "it": false,
+    "expect": false,
+    "beforeEach": false,
+    "afterEach": false,
+    "module": false,
+    "inject": false,
+    "cordova": false,
+    "window": false,
+    "StatusBar": false
+  }
+}

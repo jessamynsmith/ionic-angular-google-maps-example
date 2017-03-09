@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('angularGoogleMapsExample.controllers', ['angularGoogleMapsExample.services'])
 
   .controller('MapCtrl', function($scope, $timeout, $cordovaGeolocation, uiGmapGoogleMapApi, Yelp) {
