@@ -7,6 +7,9 @@ angular.module('angularGoogleMapsExample.controllers', ['angularGoogleMapsExampl
     $scope.markers = [];
     $scope.infoVisible = false;
     $scope.infoBusiness = {};
+    $scope.params = {
+      term: ''
+    };
 
     // Default to downtown Toronto
     var defaultPosition = {
@@ -32,14 +35,12 @@ angular.module('angularGoogleMapsExample.controllers', ['angularGoogleMapsExampl
     };
 
     var initializeMap = function(position) {
-      console.log(position);
       if (!position) {
         // Default to downtown Toronto
         position = {
           coords: defaultPosition
         };
       }
-      console.log(position);
       // TODO add marker on current location
 
       $scope.map = {
@@ -58,24 +59,7 @@ angular.module('angularGoogleMapsExample.controllers', ['angularGoogleMapsExampl
         }
       };
 
-      Yelp.search(position).then(function(data) {
-        console.log(data);
-        for (var i = 0; i < data.data.businesses.length; i++) {
-          var business = data.data.businesses[i];
-          $scope.markers.push({
-            id: i,
-            name: business.name,
-            url: business.url,
-            location: {
-              latitude: business.location.coordinate.latitude,
-              longitude: business.location.coordinate.longitude
-            }
-          });
-        }
-      }, function(error) {
-        console.log("Unable to access yelp");
-        console.log(error);
-      });
+      searchYelp(position);
     };
 
     uiGmapGoogleMapApi.then(function(maps) {
@@ -97,5 +81,34 @@ angular.module('angularGoogleMapsExample.controllers', ['angularGoogleMapsExampl
         initializeMap();
       }
     }, 5000);
+
+    var searchYelp = function(position) {
+      $scope.markers = [];
+      Yelp.search(position, $scope.params.term).then(function(data) {
+        var businesses = data.data.jsonBody.businesses;
+        for (var i = 0; i < businesses.length; i++) {
+          var business = businesses[i];
+          $scope.markers.push({
+            id: i,
+            name: business.name,
+            url: business.url,
+            location: {
+              latitude: business.coordinates.latitude,
+              longitude: business.coordinates.longitude
+            }
+          });
+        }
+      }, function(error) {
+        console.log("Unable to access yelp");
+        console.log(error);
+      });
+    };
+
+    $scope.search = function() {
+      var position = {
+        coords: $scope.map.center
+      };
+      searchYelp(position);
+    };
 
   });

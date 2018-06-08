@@ -4,15 +4,17 @@ angular.module('angularGoogleMapsExample.services', ['angularGoogleMapsExample.c
 
   .factory('Yelp', function($http, $q, apiUrl) {
     return {
-      search: function(position) {
+      search: function(position, term) {
         return $http({
           method: "get",
           url: apiUrl + 'api/v1/yelp/search',
           params: {
+            term: term,
             limit: 10,
             radius_filter: 500,
             sort: 1,
-            ll: [position.coords.latitude, position.coords.longitude].join()
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
           }
         });
       }

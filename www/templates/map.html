@@ -1,6 +1,11 @@
 <ion-view view-title="Ionic angular-google-maps Example">
   <ion-content class="padding">
 
+    <form id="id_search_form">
+      <input type="text" ng-model="params.term" placeholder="Enter a search term"></input>
+      <button ng-click="search()">Search</button>
+    </form>
+
     <ui-gmap-google-map center='map.center' zoom='map.zoom'>
       <ui-gmap-markers models="markers" coords="'location'" click="showInfo"></ui-gmap-markers>
 
