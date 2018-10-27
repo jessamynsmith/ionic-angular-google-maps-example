@@ -5,8 +5,6 @@ angular.module('angularGoogleMapsExample.controllers', ['angularGoogleMapsExampl
   .controller('MapCtrl', function($scope, $timeout, $cordovaGeolocation, uiGmapGoogleMapApi, Yelp) {
 
     $scope.markers = [];
-    $scope.infoVisible = false;
-    $scope.infoBusiness = {};
     $scope.params = {
       term: ''
     };
@@ -21,17 +19,6 @@ angular.module('angularGoogleMapsExample.controllers', ['angularGoogleMapsExampl
     $scope.map = {
       center: defaultPosition,
       zoom: zoomLevel
-    };
-
-    // Initialize and show infoWindow for business
-    $scope.showInfo = function(marker, eventName, markerModel) {
-      $scope.infoBusiness = markerModel;
-      $scope.infoVisible = true;
-    };
-
-    // Hide infoWindow when 'x' is clicked
-    $scope.hideInfo = function() {
-      $scope.infoVisible = false;
     };
 
     var initializeMap = function(position) {

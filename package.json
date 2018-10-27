@@ -44,5 +44,8 @@
     "maps",
     "ionic",
     "example"
-  ]
+  ],
+  "devDependencies": {
+    "@ionic/v1-toolkit": "1.0.10"
+  }
 }

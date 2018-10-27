@@ -1,6 +1,6 @@
 {
   "name": "ionic_angular_google_maps_example",
-  "app_id": "",
+  "integrations": {},
   "gulpStartupTasks": [
     "sass",
     "watch"
