@@ -1,0 +1,45 @@
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
+
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.11
+    steps:
+      - checkout
+      - restore_cache:
+          key: deps-npm-{{ .Branch }}-{{ checksum "package.json" }}
+      - restore_cache:
+          key: deps-bower-{{ .Branch }}-{{ checksum "bower.json" }}
+      - save_cache:
+          key: deps-npm-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - "node_modules"
+      - save_cache:
+          key: deps-bower-{{ .Branch }}-{{ checksum "bower.json" }}
+          paths:
+            - "www/lib"
+      - run:
+          command: |
+#            npm install -g gulp bower
+            npm install
+            node_modules/.bin/jshint --exclude=www/lib www server.js
+  deploy:
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
