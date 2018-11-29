@@ -7,6 +7,7 @@ var sslRedirect = require('heroku-ssl-redirect'),
 // enable ssl redirect
 app.use(sslRedirect());
 
+// Serve ionic app as static
 app.use(express.static('www'));
 
 app.set('port', process.env.PORT || 5000);
