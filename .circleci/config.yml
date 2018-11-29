@@ -31,7 +31,6 @@ jobs:
             - "www/lib"
       - run:
           command: |
-#            npm install -g gulp bower
             npm install
             node_modules/.bin/jshint --exclude=www/lib www server.js
   deploy:
