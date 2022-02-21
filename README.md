@@ -1,11 +1,11 @@
 ionic-angular-google-maps-example
 =========================
 
+## NOTE: this project is no longer maintained.
+
 Example of using angular-google-maps in an Ionic app
 
 Example of using angular-google-maps in Ionic, to display data from an API.
-
-View the running app on [Heroku](https://ionic-angular-google-maps.herokuapp.com/)
 
 This app makes external API calls to https://angular-google-maps-example.herokuapp.com/
 
